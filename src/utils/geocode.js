@@ -6,7 +6,7 @@ const geocode = (address, callback) => {
     encodeURIComponent(address) +
     "&access_token=pk.eyJ1Ijoic3dldGUyMjkiLCJhIjoiY2x4MjNpcjZvMGdiYjJqczRuMzZocndkZCJ9.Ut1zrmPtFtF6v3jilZLJTw&limit=1";
 
-  request({ url: url, json: true }, (error, response) => {
+  request({ url, json: true }, (error, response) => {
     if (error) {
       callback("Unable to fetch Coordinates", undefined);
     } else if (response.body.error_code) {
