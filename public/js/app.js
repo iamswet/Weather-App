@@ -13,7 +13,7 @@ weatherpart.addEventListener('submit',(e)=>{
     messageone.textContent='Loading...'
 
     const location=addlocation.value
-    fetch('http://localhost:3000/weather?address='+location).then((response)=>{
+    fetch('/weather?address='+location).then((response)=>{
     response.json().then((data)=>{
         messageone.textContent=data.place
         messagetwo.textContent='Temperature is '+data.Temperature+' but the apparent temperature is '+data.TemperatureApparent
